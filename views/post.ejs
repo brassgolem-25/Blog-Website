@@ -1,4 +1,11 @@
 <%- include('partials/header'); -%>
-<h1><%=pageTitle%></h1>
-<p><%=pageContent%></p>
+<h1><%=curr_post.title%></h1>
+<p><%=curr_post.content%></p>
+<form id="btnSearch"  action="/delete" method="post" >
+  <button type="submit" class="btn btn-danger" name="delete" value="<%=curr_post._id%>">Delete</button>
+  <a href="/update/<%=curr_post._id%>">
+    <button type="button" class="btn btn-success" name="update" value="<%=curr_post._id%>">Update</button>
+  </a>
+</form>
+
   <%- include('partials/footer'); -%>
